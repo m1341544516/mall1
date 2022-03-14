@@ -1,10 +1,10 @@
 <template>
-  <div class="tab-control">
+  <div class="side-bar">
     <div v-for="(item,index) in titles" 
-    class="tab-control-item" 
+    class="side-bar-item" 
     :class="{active: index === currentIndex}" 
     @click="itemClick(index)">
-      <span>{{item}}</span>
+      {{item}}
     </div>
   </div>
 </template>
@@ -35,24 +35,25 @@ export default {
 </script>
 
 <style scoped>
-  .tab-control {
-    display: flex;
-    text-align: center;
-    font-size: 15px;
-    line-height: 40px;
-    background-color: #fff;
-  }
-  .tab-control-item {
-    flex: 1;
-    height: 40px;
-  }
-  .tab-control-item span{
-    padding: 5px;
-  }
-  .active {
-    color: var(--color-high-text);
-  }
-  .active span {
-    border-bottom: 3px solid var(--color-high-text);
-  }
+.side-bar {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 44px;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  line-height: 44px;
+  font-size: 14px;
+}
+.side-bar-item {
+  width: 100px;
+  height: 44px;
+  background-color: #f6f6f6;
+}
+.active {
+  background-color: #fff;
+  color: var(--color-high-text);
+  border-left: 4px solid var(--color-high-text);
+}
 </style>
