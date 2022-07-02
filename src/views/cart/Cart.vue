@@ -1,5 +1,5 @@
 <template>
-  <div class="cart">
+  <div id="cart">
     <!-- 导航 -->
     <nav-bar class="cart-nav">
       <div slot="center">购物车({{length}})</div>
@@ -36,7 +36,7 @@ export default {
 </script>
 
 <style scoped>
-.cart {
+#cart {
   height: 100vh;
 }
 

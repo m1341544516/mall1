@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <!-- <div class="wrapper">
     <ul class="content">
       <button @click="btnClick">按钮</button>
       <li>分类列表1</li>
@@ -103,6 +103,19 @@
       <li>分类列表99</li>
       <li>分类列表100</li>
     </ul>
+  </div> -->
+  <div id="category">
+    <nav-bar class="category-nav">
+      <div slot="center">商品分类</div>
+    </nav-bar>
+    <side-bar :titles="titles"/>
+    <!-- <tab-control class="tab-control" :titles="['正在流行','上衣','裤子','裙子','裤子','裤子','裤子','裤子','裤子','裤子']" 
+      @tabClick="tabClick" ref="tabControl1" 
+      v-show="isTabFixed"/>
+
+    <scroll class="content" ref="scroll" :probe-type="3" 
+    @scroll="contentScroll" :pull-up-load="true"
+    @pullingUp="loadMore"> -->
   </div>
 </template>
 
@@ -131,11 +144,39 @@ export default {
     this.scroll.on('pullingUp',()=>{
       console.log('上拉加载更多');
     })
-  },
-  methods:{
-    btnClick(){
-      console.log('按钮被点击了');
-    }
+// import NavBar from 'components/common/navbar/NavBar.vue'
+// import SideBar from 'components/common/sidebar/SideBar.vue'
+
+// import {getCategory} from 'network/category'
+
+// export default {
+//   name:'Category',
+//   components:{
+//     NavBar,
+//     SideBar
+//   },
+//   data(){
+//     return {
+//       categoryList: [],
+//       titles: []
+//     }
+//   },
+//   created(){
+//     this.getCategory()
+//   },
+//   methods:{
+//     btnClick(){
+//       console.log('按钮被点击了');
+//     },
+//     getCategory(){
+//       getCategory().then(res=>{
+//         console.log(res);
+//         // 保存请求到的数据，箭头函数使用上下文的this
+//         this.categoryList = res.data.data.category.list
+//         res.data.data.category.list.forEach(item => this.titles.push(item.title));
+//         console.log(this.titles);
+//       })
+//     }
   }
 }
 </script>
@@ -147,4 +188,9 @@ export default {
   overflow: hidden;
   /* overflow-y: scroll; */
 }
+.category-nav {
+  background-color: var(--color-tint);
+  color: #fff;
+}
+
 </style>

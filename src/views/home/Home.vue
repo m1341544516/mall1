@@ -133,12 +133,12 @@ export default {
      * 网络请求相关的方法
      */
     getHomeMultidata(){
-    getHomeMultidata().then(res=>{
-      // console.log(res);
-      // 保存请求到的数据，箭头函数使用上下文的this
-      this.banners = res.data.data.banner.list
-      this.recommends = res.data.data.recommend.list
-    })
+      getHomeMultidata().then(res=>{
+        // console.log(res);
+        // 保存请求到的数据，箭头函数使用上下文的this
+        this.banners = res.data.data.banner.list
+        this.recommends = res.data.data.recommend.list
+      })
     },
     getHomeGoods(type){
       const page = this.goods[type].page + 1
