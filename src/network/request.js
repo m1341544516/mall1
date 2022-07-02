@@ -1,9 +1,11 @@
 import axios from "axios"
 
 export function request(config) {
-    // 1.创建对应的axios实例http://152.136.185.210:7878/api/m5
+    // 1.创建对应的axios实例
+    // http://123.207.32.32:8000
+    // http://152.136.185.210:7878/api/m5
     const instance = axios.create({
-        baseURL: 'http://123.207.32.32:8000',
+        baseURL: 'http://152.136.185.210:7878/api/hy66',
         timeout: 5000
     })
 
